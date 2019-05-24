@@ -22,12 +22,12 @@ with open('translated.csv', encoding='utf-8') as csvfile:
                 i = i+1
                 continue
             new_row = []
-            text = row[1]
+            text = row[1].lower()
             for key in word_dict:
                 if key.replace('_',' ') in text:
                     text = text.replace(key.replace('_',' '), key)
             new_row.append(row[0])
-            new_row.append(text.lower())
+            new_row.append(text)
             writer.writerow(new_row)
             i = i+1
             if i % 100 == 0:
