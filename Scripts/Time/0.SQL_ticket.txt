@@ -1,0 +1,10 @@
+(SELECT 'ID','Create_Time','Change_Time')
+UNION 
+(SELECT id,create_time, change_time
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/file.csv'
+CHARACTER SET utf8 
+FIELDS TERMINATED BY ',' 
+OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY '\\'
+LINES TERMINATED BY "\n"
+  FROM tccdb.ticket);

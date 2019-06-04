@@ -1,0 +1,10 @@
+(SELECT 'ID','ticket_id','article_body')
+UNION 
+(SELECT id,ticket_id, a_body
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/file.csv'
+CHARACTER SET utf8 
+FIELDS TERMINATED BY ',' 
+OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY '\\'
+LINES TERMINATED BY "\n"
+  FROM tccdb.article);
